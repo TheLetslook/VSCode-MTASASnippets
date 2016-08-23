@@ -1,0 +1,38 @@
+{
+    "name": "mtasasnippets",
+    "displayName": "MTA:SA Snippets",
+    "description": "Lua snippets for MTA:SA",
+    "version": "0.0.2",
+    "publisher": "theletslook",
+	"icon": "common/extension.png",
+	"galleryBanner": {
+        "color": "#1A1A1A",
+        "theme": "dark"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/TheLetslook/VSCode-MTASASnippets/issues",
+        "email": "emelchenkov.v@gmail.com"
+    },
+    "homepage": "https://github.com/TheLetslook/VSCode-MTASASnippets/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TheLetslook/VSCode-MTASASnippets.git"
+    },
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+		"snippets": [{
+            "language": "lua",
+            "path": "./snippets/lua.json"
+        },
+		{
+            "language": "xml",
+            "path": "./snippets/xml.json"
+        }]
+    }
+}

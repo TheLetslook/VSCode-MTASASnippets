@@ -1,0 +1,103 @@
+{
+	"meta": {
+		"prefix": "meta",
+		"body": "<meta>\n\t$1\n</meta>",
+		"description": "Basic meta structure.",
+		"scope": "source.xml"
+	},
+	"info": {
+		"prefix": "info",
+		"body": "<info author=\"${1:author}\" version=\"${2:version}\" name=\"${3:name}\" description=\"${4:description}\" type=\"${5:type(gamemode/script/map/misc)}\"/>",
+		"description": "Information about this resource, possible parameters include.",
+		"scope": "source.xml"
+	},
+	"script": {
+		"prefix": "script",
+		"body": "<script src=\"${1:src}\" type=\"${2:type(client/server)}\" cache=\"${3:true}\" validate=\"${4:true}\"/>",
+		"description": "Source code for this resource.",
+		"scope": "source.xml"
+	},
+	"map": {
+		"prefix": "map",
+		"body": "<map src=\"${1:src}\" dimension=\"${2:dimension(optional)}\"/>",
+		"description": "The map for a gamemode",
+		"scope": "source.xml"
+	},
+	"file": {
+		"prefix": "file",
+		"body": "<file src=\"${1:src}\"/>",
+		"description": "A client-side file. Generally these are images, .txd, .col, .dff or .xml files. They'll be downloaded by clients when the resources is started (or on join).",
+		"scope": "source.xml"
+	},
+	"include": {
+		"prefix": "include",
+		"body": "<include resource=\"${1:resource}\" minversion=\"${2:minversion(optional)}\" maxversion=\"${3:maxversion(optional)}\"/>",
+		"description": "Include resources that this resource will use.",
+		"scope": "source.xml"
+	},
+	"config": {
+		"prefix": "config",
+		"body": "<config src=\"${1:src}\" type=\"${2:type(client/server)}\"/>",
+		"description": "Config file (.xml) can be accessed by resource.",
+		"scope": "source.xml"
+	},
+	"export": {
+		"prefix": "export",
+		"body": "<export function=\"${1:function}\" type=\"${2:type(client/server/shared)}\" http=\"${3:http(true/false)}\"/>",
+		"description": "This exports functions from this resource, so other resources can use them with call.",
+		"scope": "source.xml"
+	},
+	"html": {
+		"prefix": "html",
+		"body": "<html src=\"${1:src}\" default=\"${2:default(true/false)}\" raw=\"${3:raw(true/false)}\"/>",
+		"scope": "source.xml"
+	},
+	"settings": {
+		"prefix": "settings",
+		"body": "<settings>\n\t<setting name=\"$1\" value=\"$2\"/>\n</settings>",
+		"description": "Most gamemodes use settings system to let server admins to configure it how they like. For instance you could set round time and then use get and set to get the value or change it, respectively.",
+		"scope": "source.xml"
+	},
+	"setting": {
+		"prefix": "setting",
+		"body": "<setting name=\"$1\" value=\"$2\"/>",
+		"description": "Most gamemodes use settings system to let server admins to configure it how they like. For instance you could set round time and then use get and set to get the value or change it, respectively.",
+		"scope": "source.xml"
+	},
+	"min_mta_version": {
+		"prefix": "min_mta_version",
+		"body": "<min_mta_version client=\"${1:client}\" server=\"${2:server}\"/>",
+		"description": "Minimum version requirements for this resource to run correctly. When authoring resources, the minimum version should usually be set to the current released version of MTA:SA (which at the moment is \"1.5.2\").",
+		"scope": "source.xml"
+	},
+	"aclrequest": {
+		"prefix": "aclrequest",
+		"body": "<aclrequest>\n\t<right name=\"${1:name}\" access=\"${2:access(true/false)}\"/>\n</aclrequest>",
+		"description": "A list of ACL rights this resource will need.",
+		"scope": "source.xml"
+	},
+	"right": {
+		"prefix": "right",
+		"body": "<right name=\"${1:name}\" access=\"${2:access(true/false)}\"/>",
+		"description": "A list of ACL rights this resource will need.",
+		"scope": "source.xml"
+	},
+	"sync_map_element_data": {
+		"prefix": "sync_map_element_data",
+		"body": "<sync_map_element_data>${1:(true/false)}</sync_map_element_data>",
+		"description": "Controls whether map element data such as \"PosX\" and \"DoubleSided\" are transferred to the client. This data is usually not required by most gamemodes or resources. (Map Editor and Interiors require this to be not set to false to work). When set in a gamemode meta.xml, the setting will apply to all maps loaded by that resource.",
+		"scope": "source.xml"
+	},
+	"oop": {
+		"prefix": "oop",
+		"body": "<oop>${1:(true/false)}</oop>",
+		"description": "OOP.",
+		"scope": "source.xml"
+	},
+	"download_priority_group": {
+		"prefix": "download_priority_group",
+		"body": "<download_priority_group>${1:1}</download_priority_group>",
+		"description": "If not set, the download priority group for a resource defaults to 0. If this is set higher than 0, then the resource will be downloaded and started on the client earlier than other resources. If set to less than 0, the resource will be downloaded and started on the client later than other resources.",
+		"scope": "source.xml"
+	}
+}
