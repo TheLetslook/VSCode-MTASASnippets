@@ -41,7 +41,7 @@
 	},
 	"string.find": {
 		"prefix": "string.find",
-		"body": "string.find( ${1:str}, ${2:index})",
+		"body": "string.find( ${1:str}, ${2:index} )",
 		"description": "",
 		"scope": "source.lua"
 	},
@@ -2224,7 +2224,7 @@
 	},
 	"interpolateBetween": {
 		"prefix": "interpolateBetween",
-		"body": "interpolateBetween( ${1:float x1}, ${2:float y1}, ${3:float z1},                                        ${4:float x2}, ${5:float y2}, ${6:float z2},                                        ${7:float fProgress}, ${8:string strEasingType},                                        [ ${9:float fEasingPeriod}, ${10:float fEasingAmplitude}, ${11:float fEasingOvershoot }] )",
+		"body": "interpolateBetween( ${1:float x1}, ${2:float y1}, ${3:float z1}, ${4:float x2}, ${5:float y2}, ${6:float z2}, ${7:float fProgress}, ${8:string strEasingType}, [ ${9:float fEasingPeriod}, ${10:float fEasingAmplitude}, ${11:float fEasingOvershoot }] )",
 		"description": "Server-side",
 		"scope": "source.lua"
 	},
@@ -2836,7 +2836,7 @@
 	},
 	"setAccountPassword": {
 		"prefix": "setAccountPassword",
-		"body": "setAccountPassword( ${1:account theAccount}, ${2:string password} )",
+		"body": "setAccountPassword( ${1:account theAccount}, ${2:string password}, ${2: string passwordType=\"plaintext\"} )",
 		"description": "Server-side",
 		"scope": "source.lua"
 	},
@@ -4267,6 +4267,12 @@
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
+	"createBrowser": {
+		"prefix": "createBrowser",
+		"body": "createBrowser( ${1:int width}, ${2:int height}, ${3:bool isLocal} [, ${4:bool transparent = false} ] )",
+		"description": "Server-side",
+		"scope": "source.lua"
+	},
 	"createColCircle": {
 		"prefix": "createColCircle",
 		"body": "createColCircle( ${1:float fX}, ${2:float fY}, ${3:float radius} )",
@@ -4325,6 +4331,12 @@
 		"prefix": "createFire",
 		"body": "createFire( ${1:float x}, ${2:float y}, ${3:float z }[, ${4:float size = 1.8} ] )",
 		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"createLight": {
+		"prefix": "createLight",
+		"body": "createLight( ${1:int lightType}, ${2:float posX}, ${3:float posY}, ${4:float posZ [}, ${5:float radius = 3}, ${6:int r = 255}, ${7:int g = 0}, ${8:int b = 0}, ${9:float dirX = 0}, ${10:float dirY = 0}, ${11:float dirZ = 0}, ${12:bool createsShadow = false} ] )",
+		"description": "Server-side",
 		"scope": "source.lua"
 	},
 	"createMarker": {
@@ -4729,6 +4741,12 @@
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
+	"executeBrowserJavascript": {
+		"prefix": "executeBrowserJavascript",
+		"body": "executeBrowserJavascript( ${1:browser webBrowser}, ${2:string jsCode} )",
+		"description": "Server-side",
+		"scope": "source.lua"
+	},
 	"executeCommandHandler": {
 		"prefix": "executeCommandHandler",
 		"body": "executeCommandHandler( ${1:string commandName}, ${2:player thePlayer}, [ ${3:string args }] )",
@@ -4841,6 +4859,12 @@
 		"prefix": "fixVehicle",
 		"body": "fixVehicle( ${1:vehicle theVehicle} )",
 		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"focusBrowser": {
+		"prefix": "focusBrowser",
+		"body": "focusBrowser( ${1:browser webBrowser} )",
+		"description": "Server-side",
 		"scope": "source.lua"
 	},
 	"fromJSON": {
@@ -5005,6 +5029,36 @@
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
+	"getBrowserProperty": {
+		"prefix": "getBrowserProperty",
+		"body": "getBrowserProperty( ${1:browser theBrowser}, ${2:string key} )",
+		"description": "Server-side",
+		"scope": "source.lua"
+	},
+	"getBrowserSource": {
+		"prefix": "getBrowserSource",
+		"body": "getBrowserSource( ${1:browser theBrowser}, ${2:funciton callback} )",
+		"description": "Server-side",
+		"scope": "source.lua"
+	},
+	"getBrowserTitle": {
+		"prefix": "getBrowserTitle",
+		"body": "getBrowserTitle( ${1:browser theBrowser} )",
+		"description": "Server-side",
+		"scope": "source.lua"
+	},
+	"getBrowserURL": {
+		"prefix": "getBrowserURL",
+		"body": "getBrowserURL( ${1:browser theBrowser} )",
+		"description": "Server-side",
+		"scope": "source.lua"
+	},
+	"getBrowserVolume": {
+		"prefix": "getBrowserVolume",
+		"body": "getBrowserVolume( ${1:browser theBrowser} )",
+		"description": "Server-side",
+		"scope": "source.lua"
+	},
 	"getCameraGoggleEffect": {
 		"prefix": "getCameraGoggleEffect",
 		"body": "getCameraGoggleEffect(  )",
@@ -5017,6 +5071,12 @@
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
+	"getCameraFieldOfView": {
+		"prefix": "getCameraFieldOfView",
+		"body": "getCameraFieldOfView( ${1:string cameraMode} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
 	"getCameraTarget": {
 		"prefix": "getCameraTarget",
 		"body": "getCameraTarget( ${1:player thePlayer} )",
@@ -5026,6 +5086,12 @@
 	"getCameraViewMode": {
 		"prefix": "getCameraViewMode",
 		"body": "getCameraViewMode(  )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"getCameraShakeLevel": {
+		"prefix": "getCameraShakeLevel",
+		"body": "getCameraShakeLevel(  )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
@@ -5374,6 +5440,30 @@
 	"getLatentEventStatus": {
 		"prefix": "getLatentEventStatus",
 		"body": "getLatentEventStatus( ${1:player thePlayer}, ${2:int handle} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"getLightType": {
+		"prefix": "getLightType",
+		"body": "getLightType( ${1:light theLight } )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"getLightRadius": {
+		"prefix": "getLightRadius",
+		"body": "getLightRadius( ${1:light theLight } )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"getLightColor": {
+		"prefix": "getLightColor",
+		"body": "getLightColor( ${1:light theLight } )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"getLightDirection": {
+		"prefix": "getLightDirection",
+		"body": "getLightDirection( ${1:light theLight } )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
@@ -6985,15 +7075,57 @@
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
+	"injectBrowserMouseDown": {
+		"prefix": "injectBrowserMouseDown",
+		"body": "injectBrowserMouseDown( ${1:browser webBrowser}, ${2:string mouseButton} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"injectBrowserMouseMove": {
+		"prefix": "injectBrowserMouseMove",
+		"body": "injectBrowserMouseMove( ${1:browser webBrowser}, ${2:int posX}, ${3:int posY} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"injectBrowserMouseUp": {
+		"prefix": "injectBrowserMouseUp",
+		"body": "injectBrowserMouseUp( ${1:browser webBrowser}, ${2:string mouseButton} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"injectBrowserMouseWheel": {
+		"prefix": "injectBrowserMouseWheel",
+		"body": "injectBrowserMouseWheel( ${1:browser webBrowser}, ${2:int verticalScroll}, ${3:int horizontalScroll} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
 	"interpolateBetween": {
 		"prefix": "interpolateBetween",
-		"body": "interpolateBetween( ${1:float x1}, ${2:float y1}, ${3:float z1},                                        ${4:float x2}, ${5:float y2}, ${6:float z2},                                        ${7:float fProgress}, ${8:string strEasingType},                                        [ ${9:float fEasingPeriod}, ${10:float fEasingAmplitude}, ${11:float fEasingOvershoot }] )",
+		"body": "interpolateBetween( ${1:float x1}, ${2:float y1}, ${3:float z1}, ${4:float x2}, ${5:float y2}, ${6:float z2}, ${7:float fProgress}, ${8:string strEasingType}, [ ${9:float fEasingPeriod}, ${10:float fEasingAmplitude}, ${11:float fEasingOvershoot }] )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
 	"isAmbientSoundEnabled": {
 		"prefix": "isAmbientSoundEnabled",
 		"body": "isAmbientSoundEnabled( ${1:string theType} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"isBrowserDomainBlocked": {
+		"prefix": "isBrowserDomainBlocked",
+		"body": "isBrowserDomainBlocked( ${1:string address} [, ${2:bool isURL = false}] )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"isBrowserFocused": {
+		"prefix": "isBrowserFocused",
+		"body": "isBrowserFocused( ${1:browser webBrowser} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"isBrowserLoading": {
+		"prefix": "isBrowserLoading",
+		"body": "isBrowserLoading( ${1:browser webBrowser} )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
@@ -7351,6 +7483,12 @@
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
+	"loadBrowserURL": {
+		"prefix": "loadBrowserURL",
+		"body": "loadBrowserURL( ${1:browser webBrowser}, ${2:string url [}, ${3:string postData = ""}, ${4:bool urlEncoded = true} ] )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
 	"md5": {
 		"prefix": "md5",
 		"body": "md5( ${1:string str} )",
@@ -7359,7 +7497,7 @@
 	},
 	"moveObject": {
 		"prefix": "moveObject",
-		"body": "moveObject( ${1:object theObject}, ${2:int time},                  ${3:float targetx}, ${4:float targety}, ${5:float targetz},                 [ ${6:float moverx}, ${7:float movery}, ${8:float moverz},                  ${9:string strEasingType}, ${10:float fEasingPeriod}, ${11:float fEasingAmplitude}, ${12:float fEasingOvershoot }] )",
+		"body": "moveObject( ${1:object theObject}, ${2:int time}, ${3:float targetx}, ${4:float targety}, ${5:float targetz [}, ${6:float moverx}, ${7:float movery}, ${8:float moverz}, ${9:string strEasingType}, ${10:float fEasingPeriod}, ${11:float fEasingAmplitude}, ${12:float fEasingOvershoot }] )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
@@ -7395,13 +7533,13 @@
 	},
 	"playSound": {
 		"prefix": "playSound",
-		"body": "playSound( ${1:string soundPath}, [ ${2:bool looped = false }] )",
+		"body": "playSound( ${1:string soundPath}, [ ${2:bool looped = false }, ${2:bool throttled = true}] )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
 	"playSound3D": {
 		"prefix": "playSound3D",
-		"body": "playSound3D( ${1:string soundPath}, ${2:float x}, ${3:float y}, ${4:float z}, [ ${5:bool looped = false }] )",
+		"body": "playSound3D( ${1:string soundPath}, ${2:float x}, ${3:float y}, ${4:float z}, [ ${5:bool looped = false }, ${2:bool throttled = false}] )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
@@ -7468,6 +7606,12 @@
 	"removeWorldModel": {
 		"prefix": "removeWorldModel",
 		"body": "removeWorldModel( ${1:int modelID}, ${2:float radius}, ${3:float x}, ${4:float y}, ${5:float z }[, ${6:int interior = 0} ] )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"requestBrowserDomains": {
+		"prefix": "requestBrowserDomains",
+		"body": "requestBrowserDomains( ${1:table pages} [, ${2:bool parseAsURL = false}, ${3:function callback} ] )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
@@ -7645,9 +7789,39 @@
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
+	"setBrowserAjaxHandler": {
+		"prefix": "setBrowserAjaxHandler",
+		"body": "setBrowserAjaxHandler( ${1:browser webBrowser}, ${2:string url} [, ${3:function handler}] )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"setBrowserProperty": {
+		"prefix": "setBrowserProperty",
+		"body": "setBrowserProperty( ${1:browser theBrowser}, ${2:string key}, ${3:string value} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"setBrowserRenderingPaused": {
+		"prefix": "setBrowserRenderingPaused",
+		"body": "setBrowserRenderingPaused( ${1:browser theBrowser}, ${2:bool paused} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"setBrowserVolume": {
+		"prefix": "setBrowserVolume",
+		"body": "setBrowserVolume( ${1:browser theBrowser}, ${2:float volume} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
 	"setCameraClip": {
 		"prefix": "setCameraClip",
 		"body": "setCameraClip( [ ${1:bool objects = true}, ${2:bool vehicles = true }] )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"setCameraFieldOfView": {
+		"prefix": "setCameraFieldOfView",
+		"body": "setCameraFieldOfView( ${1:string cameraMode}, ${2:float fieldOfView} )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
@@ -7678,6 +7852,12 @@
 	"setCameraViewMode": {
 		"prefix": "setCameraViewMode",
 		"body": "setCameraViewMode( ${1:int viewMode} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"setCameraShakeLevel": {
+		"prefix": "setCameraShakeLevel",
+		"body": "setCameraShakeLevel( ${1:int shakeLevel} )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
@@ -7906,6 +8086,24 @@
 	"setLowLODElement": {
 		"prefix": "setLowLODElement",
 		"body": "setLowLODElement( ${1:element theElement}, ${2:element lowLODElement} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"setLightRadius": {
+		"prefix": "setLightRadius",
+		"body": "setLightRadius( ${1:light theLight}, ${2:float radius} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"setLightColor": {
+		"prefix": "setLightColor",
+		"body": "setLightColor( ${1:light theLight}, ${2:float r}, ${3:float g}, ${4:float b} )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"setLightDirection": {
+		"prefix": "setLightDirection",
+		"body": "setLightDirection( ${1:light theLight}, ${2:float x}, ${3:float y}, ${4:float z} )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
@@ -8614,6 +8812,12 @@
 	"toggleAllControls": {
 		"prefix": "toggleAllControls",
 		"body": "toggleAllControls( ${1:player thePlayer}, ${2:bool enabled}, [ ${3:bool gtaControls = true}, ${4:bool mtaControls = true }] )",
+		"description": "Client-side",
+		"scope": "source.lua"
+	},
+	"toggleBrowserDevTools": {
+		"prefix": "toggleBrowserDevTools",
+		"body": "toggleBrowserDevTools( ${1:browser webBrowser}, ${2:bool visible} )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},
