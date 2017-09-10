@@ -2,7 +2,7 @@
     "name": "mtasasnippets",
     "displayName": "MTA:SA Snippets",
     "description": "Lua snippets for MTA:SA",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "theletslook",
 	"icon": "common/extension.png",
 	"galleryBanner": {

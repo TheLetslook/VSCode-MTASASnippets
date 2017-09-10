@@ -1,8 +1,4 @@
 {
-	//
-	// Main
-	//
-
 	"fori": {
 		"prefix": "fori",
 		"body": "for ${1:i},${2:v} in ipairs(${3:table_name}) do\n\t${0:print(i,v)}\nend",
@@ -56,12 +52,7 @@
 		"body": "table.sort( ${1:tablename}${2:, sortfunction} )",
 		"description": "table.sort",
 		"scope": "source.lua"
-	}
-	
-	//
-	// Server-Side
-	//
-	
+	},
 	"aclCreate": {
 		"prefix": "aclCreate",
 		"body": "aclCreate( ${1:string aclName} )",
@@ -4147,12 +4138,7 @@
 		"body": "xmlUnloadFile( ${1:xmlnode node} )",
 		"description": "Server-side",
 		"scope": "source.lua"
-	}
-	
-	//
-	// Client-Side
-	//
-	
+	},
 	"addCommandHandler": {
 		"prefix": "addCommandHandler",
 		"body": "addCommandHandler( ${1:string commandName}, ${2:function handlerFunction}, [${3:bool restricted = false}, ${4:bool caseSensitive = true}] )",
@@ -7485,7 +7471,7 @@
 	},
 	"loadBrowserURL": {
 		"prefix": "loadBrowserURL",
-		"body": "loadBrowserURL( ${1:browser webBrowser}, ${2:string url [}, ${3:string postData = ""}, ${4:bool urlEncoded = true} ] )",
+		"body": "loadBrowserURL( ${1:browser webBrowser}, ${2:string url [}, ${3:string postData = \"\"}, ${4:bool urlEncoded = true} ] )",
 		"description": "Client-side",
 		"scope": "source.lua"
 	},

@@ -7,6 +7,10 @@ ext install mtasasnippets
 
 ## Release Notes
 
+### 0.0.3
+
+Some fixes and additions from @Loki214
+
 ### 0.0.2
 
 Added snippets to fill meta.xml
